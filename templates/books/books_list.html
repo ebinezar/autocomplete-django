@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'books/confirm_delete_modal.html' %}
+<!-- <div class="d-flex justify-content-between">
+  <form style="width:100%" action="/schools" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+    
+    <div><input type="text" name="query" id="autocomplete-dynamic" value="Aachi Global School" placeholder="Type in at least 2 letters to begin the autocomplete process." style="width: 85%; border-width: 5px;" autocomplete="off"></div>
+    
+    <div><input type="submit" name="commit" value="Search" class="justify-content-center" data-disable-with="Search"></div>
+    
+  </form></div> -->
+  
+  <form action="/books" accept-charset="UTF-8" method="get">
+    <div class="input-group mb-3">
+        <input type="text" name="q" id="basicAutoComplete" class="form-control" placeholder="Book's title" {% if q %} value="{{q}}" {% endif %}>
+        <div class="input-group-append col-md-3">
+          <input type="submit" value="Search" class="input-group-text">
+        </div>
+      <div class="">
+        <a href="{% url 'book_add' %}" class="btn btn-primary">Add Book</a>
+      </div>
+    </div>
+  </form>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th colspan="3" align="center">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{ book.title }}</td>
+          <td><a href="{% url 'book_detail' book.pk %}">Show</a></td>
+          <td><a href="{% url 'book_edit' book.pk %}">Edit</a></td>
+          <td><a href="{% url 'book_delete' pk=book.pk %}" class="confirm-delete" title="Delete" data-toggle="modal" data-target="#confirmDeleteModal" id="deleteButton{{book.pk}}">Delete</a></td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% if is_paginated %}
+  <div class="float-right">
+    <div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a href="?page=1">&laquo; first</a>
+              <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+  
+          <span class="current">
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
+  
+          {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">next</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}

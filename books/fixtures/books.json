@@ -1,0 +1,58 @@
+[
+    {
+      "model": "books.books",
+      "fields": {
+        "title": "Eloquent JavaScript, Second Edition",
+        "author": "Marijn Haverbeke"
+      }
+    },
+    {
+        "model": "books.books",
+        "fields": {
+            "title": "Git Pocket Guide",
+            "author": "Richard E. Silverman"
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "You Don't Know JS",
+            "author": "Kyle Simpson"
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Understanding ECMAScript 6",
+            "author": "Nicholas C. Zakas"
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Programming JavaScript Applications",
+            "author": "Eric Elliott"
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Speaking JavaScript",
+            "author": "Axel Rauschmayer"
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Learning JavaScript Design Patterns",
+            "author": "Addy Osmani"
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Designing Evolvable Web APIs with ASP.NET",
+            "author": "Glenn Block, et al."
+        }
+      }
+]

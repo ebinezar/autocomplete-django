@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+    image: autocomplete_app
+    restart: always
+    ports:
+      - "8088:8080"
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+      - MYSQL_DATABASE=default
