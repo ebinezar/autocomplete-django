@@ -28,9 +28,9 @@ WORKDIR /var/app
 
 # Install python libs
 RUN pip install setuptools --upgrade
-RUN pip install -r requirements.txt --no-cache-dir
+RUN pip install -r /var/app/requirements.txt --no-cache-dir
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 ENTRYPOINT [ "/bin/sh" ]
-CMD [ "/entrypoint.sh" ]
+CMD [ "entrypoint.sh" ]

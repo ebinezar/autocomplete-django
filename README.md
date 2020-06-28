@@ -49,6 +49,13 @@ Once docker is installed clone the application in your local system by
 
 `python manage.py loaddata --app books books`
 
+## Run test cases in local
+
+`python manage.py test`
+
+## Run application in local
+
+`python manage.py runserver localhost:8080`
 
 Now the application runs in the http://localhost:8080
 
