@@ -2,15 +2,7 @@
 
 {% block content %}
 {% include 'books/confirm_delete_modal.html' %}
-<!-- <div class="d-flex justify-content-between">
-  <form style="width:100%" action="/schools" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
-    
-    <div><input type="text" name="query" id="autocomplete-dynamic" value="Aachi Global School" placeholder="Type in at least 2 letters to begin the autocomplete process." style="width: 85%; border-width: 5px;" autocomplete="off"></div>
-    
-    <div><input type="submit" name="commit" value="Search" class="justify-content-center" data-disable-with="Search"></div>
-    
-  </form></div> -->
-  
+
   <form action="/books" accept-charset="UTF-8" method="get">
     <div class="input-group mb-3">
         <input type="text" name="q" id="basicAutoComplete" class="form-control" placeholder="Book's title" {% if q %} value="{{q}}" {% endif %}>
@@ -31,7 +23,7 @@
       </tr>
     </thead>
     <tbody>
-      {% for book in books %}
+      {% for book in books_list %}
         <tr>
           <td>{{ book.title }}</td>
           <td><a href="{% url 'book_detail' book.pk %}">Show</a></td>

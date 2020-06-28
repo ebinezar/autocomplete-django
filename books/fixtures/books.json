@@ -54,5 +54,47 @@
             "title": "Designing Evolvable Web APIs with ASP.NET",
             "author": "Glenn Block, et al."
         }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Designing Web APIs with ASP.NET",
+            "author": "Glenn Block, et al."
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Java quick learning",
+            "author": "Glenn Block, et al."
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Pyspark expert",
+            "author": "Glenn Block, et al."
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "Kafka in 30 days",
+            "author": "Glenn Block, et al."
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "AWS associate",
+            "author": "Glenn Block, et al."
+        }
+      },
+      {
+        "model": "books.books",
+        "fields": {
+            "title": "AWS expert",
+            "author": "Glenn Block, et al."
+        }
       }
 ]

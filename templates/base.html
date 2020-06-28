@@ -35,8 +35,10 @@
       $('#basicAutoComplete').autoComplete({
           resolverSettings: {
               url: 'books/search',
+              requestThrottling: 150
           },
           minLength: 1,
+          preventEnter: true,
           formatResult: function(item) {
             return item.title;
           }

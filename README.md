@@ -41,6 +41,8 @@ Once docker is installed clone the application in your local system by
 ## Sample Data load in the database
 `docker exec -it <app name> bash`
 
+`cd /var/app`
+
 `python manage.py makemigrations books`
 
 `python manage.py migrate books`
@@ -52,6 +54,6 @@ Now the application runs in the http://localhost:8080
 
 ## curl request for search
 
-`curl -X GET  -H "Content-type: application/json"  -H "Accept: application/json"  "http://localhost:8080/books/search?q=le"`
+`curl -X GET  -H "Content-type: application/json"  -H "Accept: application/json"  "http://localhost:8080/books/search?q=de"`
 
 `[{"title": "Designing Evolvable Web APIs with ASP.NET"}, {"title": "Learning JavaScript Design Patterns"}]`

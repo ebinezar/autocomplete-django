@@ -4,7 +4,7 @@ services:
     image: autocomplete_app
     restart: always
     ports:
-      - "8088:8080"
+      - "8080:80"
   db:
     image: mysql:5.7
     restart: always

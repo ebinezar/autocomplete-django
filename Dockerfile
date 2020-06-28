@@ -11,26 +11,26 @@ RUN apk add --update \
   nginx-mod-http-headers-more \
   && rm -rf /var/cache/apk/*
 
+# Create required directories
 RUN mkdir -p /var/app
 RUN mkdir -p /var/log/uwsgi
 RUN mkdir -p /var/run/uwsgi
 
-ADD requirements.txt /var/app
-RUN pip install setuptools --upgrade
-RUN pip install -r /var/app/requirements.txt --no-cache-dir
-
 #Ngnix
 COPY nginx.conf /etc/nginx
-
-#Logrotate config
-RUN mkdir -p /log/old/uwsgi
-
-#Start All process
-COPY start.sh /start.sh
-COPY uwsgi.ini /uwsgi.ini
-RUN chmod +x /start.sh
-COPY . /var/app
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 
+# Copy application code
+COPY . /var/app
+
+# Change to the application's directory
+WORKDIR /var/app
+
+# Install python libs
+RUN pip install setuptools --upgrade
+RUN pip install -r requirements.txt --no-cache-dir
+
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT [ "/bin/sh" ]
-CMD [ "/start.sh" ]
+CMD [ "/entrypoint.sh" ]

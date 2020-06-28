@@ -16,7 +16,7 @@ class BooksListView(ListView):
 	"""
 	model = Books
 	paginate_by = 10  # if pagination is desired
-	context_object_name = 'books'
+	context_object_name = 'books_list'
 	
 	def get_queryset(self):
 		query = self.request.GET.get('q')
@@ -65,7 +65,6 @@ class BooksDeleteView(View):
 		View to delete a book
 	"""
 	model = Books
-	success_url = reverse_lazy('books_list')
 
 	def get(self, request, pk):
 		"""
